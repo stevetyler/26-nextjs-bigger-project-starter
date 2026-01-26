@@ -1,0 +1,24 @@
+import MeetupList from "../components/meetups/MeetupList";
+
+const dummy_meetups = [
+  {
+    id: "m1",
+    title: "A First Meetup",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
+    address: "Some Address 5, 12345 Some City",
+    description: "This is a first meetup!",
+  },
+    {   
+    id: "m2",
+    title: "A Second Meetup",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg",
+    address: "Some Address 10, 12345 Some City",
+    description: "This is a second meetup!",
+  }
+];
+
+export default function HomePage() {
+  return <MeetupList meetups={dummy_meetups}/>;
+}
