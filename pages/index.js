@@ -20,5 +20,5 @@ const dummy_meetups = [
 ];
 
 export default function HomePage() {
-  return <MeetupList meetups={dummy_meetups}/>;
+  return <MeetupList meetups={dummy_meetups}/>
 }
