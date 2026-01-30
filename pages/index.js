@@ -19,6 +19,23 @@ const dummy_meetups = [
   }
 ];
 
-export default function HomePage() {
-  return <MeetupList meetups={dummy_meetups}/>
+function HomePage(props) {
+  return <MeetupList meetups={props.meetups}/>
+}
+
+export default HomePage;
+
+// reserved name, only works in page components
+// called at build time on server side
+export async function getStaticProps() {
+  // all code here is never exposed to the client
+  // eg fetching sensitive data from a database
+
+  // fetch data from an API
+  return {
+    props: {
+      meetups: dummy_meetups
+    },
+    revalidate: 10
+  }
 }
