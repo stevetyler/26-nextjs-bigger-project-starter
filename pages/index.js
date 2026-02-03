@@ -25,6 +25,22 @@ function HomePage(props) {
 
 export default HomePage;
 
+// runs on server after deployment, on every request
+// use for data that changes frequently per second
+// export async function getServerSideProps(context) {
+//   const req = context.request; // use for auth, etc
+//   const res = context.response;
+
+//   return {
+//     props: {
+//       meetups: dummy_meetups
+//     }
+//   }
+// }
+
+
+
+
 // reserved name, only works in page components
 // called at build time on server side
 export async function getStaticProps() {
@@ -36,6 +52,6 @@ export async function getStaticProps() {
     props: {
       meetups: dummy_meetups
     },
-    revalidate: 10
+    revalidate: 10 // incremental static regeneration (in seconds)
   }
 }
